@@ -1,0 +1,46 @@
+import turtle as t
+t.hideturtle()
+t.colormode(255)
+t.pensize(2)
+t.color(0,240,14)
+t.fillcolor(0,120,70)
+t.begin_fill()
+for _ in range(4):
+    t.fd(80)
+    t.rt(90)
+t.end_fill()
+t.penup()
+t.fd(100)
+t.pendown()
+t.pensize(4)
+t.rt(60)
+t.color(250,40,0)
+t.fillcolor(255,80,0)
+t.begin_fill()
+for _ in range(2):
+    t.fd(80)
+    t.rt(60)
+    t.fd(80)
+    t.rt(120)
+t.end_fill()
+t.penup()
+t.fd(90)
+t.pendown()
+t.pensize(6)
+t.color(0,70,220)
+t.begin_fill()
+t.fillcolor(0,70,120)
+g = 60
+f = 80
+y = 100
+for _ in range(1):
+    t.fd(f)
+    t.lt(60)
+    t.fd(g)
+    t.lt(60)
+    t.fd(f)
+    t.lt(120)
+    t.fd(y)
+t.end_fill()
+t.done()
+

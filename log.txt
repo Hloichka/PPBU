@@ -1,0 +1,22 @@
+info
+info
+info
+info
+
+error
+error
+error
+error
+error
+error
+
+warning
+warning
+warning
+warning
+warning
+warning
+warning
+warning10/01/27: Температура:
+ 2Осадки
+ no 
