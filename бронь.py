@@ -1,28 +1,30 @@
 ####проект по бронированию
 ####список мест в виде списка кортежей
 ####[["Б1", "свободно"], ["Б2", "свободно"]]
+####метод bint привязка к кнопки или мышки - типо ввести и энтер->запускается процесс
 from tkinter import *
 from tkinter import messagebox as mb
 
 
-def book_seat(seat):
-    s = seat_entry.get
+def book_seat(event=None):
+    s = seat_entry.get()
     try:
         if seat[s] == "Свободно ":
             seat[s] = 'Забронированно'
+            update_canvas()
             mb.showinfo('Выполнено', f'Место {s} успешно забронировано.')
         else:
-            mb.showinfo('Ошибка' f'Место {s} недоступно.')
+            mb.showinfo('Ошибка', f'Место {s} недоступно.')
     except KeyError:
-        mb.showinfo('Ошибка' f'Место {s} не существует.')
+        mb.showinfo('Ошибка', f'Место {s} не существует.')
 
 
 def update_canvas():
     canvas.delete('all')
     for i, (seats, status) in enumerate(seat.items()):
-        x = i * 40 + 20
+        x = i * 40 + 5
         y = 20
-        color_seat = "green" if status == "Свободно" else "red"
+        color_seat = "green" if status == "Свободно " else "red"
         canvas.create_rectangle(x, y, x+30, y+30, fill=color_seat)
         canvas.create_text(x+20, y+20, text=seats)
 
@@ -33,7 +35,7 @@ window.title('')
 window.geometry('400x200')
 
 
-canvas = Canvas(window, width=400, height=200, background='black')
+canvas = Canvas(window, width=400, height=60, background='light gray')
 canvas.pack(pady=10)
 
 seat = {f'Б{x}':"Свободно " for x in range(1, 11)} ###отображать в столб свободные места
