@@ -29,10 +29,22 @@ def update_canvas():
         canvas.create_text(x+20, y+20, text=seats)
 
 
+def cancel_booking(event=None):
+    s = cancel_seat_entry.get()
+    try:
+        if seat[s] == "Забронированно":
+            seat[s] = 'Свободно '
+            update_canvas()
+            mb.showinfo('Выполнено', f'Бронь {s} отменена.')
+        else:
+            mb.showinfo('Ошибка', f'Место {s} недоступно.')
+    except KeyError:
+        mb.showinfo('Ошибка', f'Место {s} не существует.')
+
 
 window = Tk()
 window.title('')
-window.geometry('400x200')
+window.geometry('400x300')
 
 
 canvas = Canvas(window, width=400, height=60, background='light gray')
@@ -44,9 +56,16 @@ update_canvas() ###обновляет холст
 
 seat_entry = Entry()
 seat_entry.pack(pady=10)
-
+seat_entry.focus()
+seat_entry.bind('<Return>', book_seat)
 Button(text='Забронировать место', command=book_seat).pack(pady=10)
 
+
+cancel_seat_entry = Entry()
+cancel_seat_entry.pack(pady=10)
+cancel_seat_entry.focus()
+cancel_seat_entry.bind('<Return>', cancel_booking)
+Button(text='Отменить бронь', command=cancel_booking).pack(pady=10)
 
 
 
