@@ -83,4 +83,8 @@ Image -
 PIL -
 resize -
 save -
+install -
+find - найти
+replace - заменить
+count - считать
 
