@@ -1,90 +1,206 @@
 draw -
+
 event -
+
 input -
+
 value -
+
 share -
+
 folder -
+
 print -
+
 rsult -
+
 push -
+
 fill -
+
 link -
+
 outline -
+
 width -
+
 height -
+
 Motion -
+
 date -
+
 text -
+
 int -
+
 turtle -
+
 shape -
+
 triangle -
+
 circle -
+
 square -
+
 penup -
+
 pendown -
+
 down -
+
 up -
+
 sqrt -
+
 if -
+
 else -
+
 elif -
+
 False -
+
 match -
+
 case -
+
 type -
+
 str -
+
 HTML -
+
 color mode -
+
 confinum -
+
 break -
+
 while -
+
 rem -
+
 range -
+
 lambda -
+
 pensize -
+
 Button -
+
 global -
+
 bind -
+
 hideturtle -
+
 top -
+
 goto -
+
 side -
+
 time.sleep() -
+
 string -
+
 lower -
+
 canitalize -
+
 star, stop, step -
+
 list -
+
 tuple -
+
 dict -
+
 extend -
+
 datatime.date -
+
 datatime.time -
+
 datatime.datatime -
+
 import -
+
 ASCII -
+
 append -
+
 even -
+
 reverse -
+
 sort -
+
 zip -
+
 arr -
+
 buf -
+
 None -
+
 tuple -
+
 return -
+
 True -
+
 False -
+
 def -
+
 update() -
+
 ImageTk -
+
 Image -
+
 PIL -
+
 resize -
+
 save -
+
 install -
+
 find - найти
-replace - заменить
+
+replace - заменить, метод изменения строки и т.д.
+
 count - считать
+
+strip - метод делит слова (разделяет их) было: Миша и Маша; стало: 'Миша','и','Маша'. Так же убрает пробелы спереди
+(внутри строки не убирает) + через \t табуляцию, \n перенос строки, \r возврат каретки
+
+lower - метод изменения заглавной буквы - делает все строчными
+
+upper - метод делает все слова/буквы заглавными буквами
+
+capitalize - метод сделать первую букву заглавной
+
+startswith - начать с ...
+
+endswith -
+
+split - разрезать, метод разрезать строку по пробелам (к примеру)
+
+width - ширина
+
+set - установить, задать
+
+create - создать что-то
+
+draw - нарисовать что-то
+
+update - обновить что-то
+
+get - получить что-то, откуда-(указать)
+
 
