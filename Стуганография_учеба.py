@@ -12,28 +12,3 @@ encode_text("C:\\Users\\Милирен\\Pictures\\Screenshots\\11.png", "dead", 
 print("Текст скрыт")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
