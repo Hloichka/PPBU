@@ -6,6 +6,7 @@ import time
 import pygame
 
 
+
 t = 0
 music = False
 
@@ -23,6 +24,8 @@ def set():
             # print(dt)
             t = dt.timestamp()
             # print(t)
+            text = sd.askstring("What Reminder?", "Please Write me a reminder of what?")
+            label.config(text=f"Reminder at {hour:02}:{minute:02}")
         except Exception as e:
             mb.showerror("Error!", f"Error: {e}")
 
@@ -56,17 +59,20 @@ def stop_snd():
 
 
 window = Tk()
-window.geometry("250x100")
+window.geometry("280x150")
 window.title("Simple Reminder")
+window.config(bg="pink")
+canvas = Canvas(width=250, height=180)
 img = PhotoImage("hour.ico")
 window.iconbitmap(True, img)
-label = Label(window, text="Add a Reminder", font=("Times New Roman", 14))
+label = Label(window, text="Add a Reminder", font=("Times New Roman", 14), bg="pink", fg="black")
 label.pack(pady=10)
 
 
-set_button = Button(text="Set a Reminder", command=set)
+set_button = Button(text="Set a Reminder", command=set, bg="green", fg="black")
 set_button.pack(pady=10)
-stop_button = Button(text="Stop a Reminder", command=stop_snd)
+set_button.pack(pady=10)
+stop_button = Button(text="Stop a Reminder", command=stop_snd, bg="red", fg="black")
 stop_button.pack(pady=10)
 
 check()
