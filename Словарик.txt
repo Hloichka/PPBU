@@ -2,7 +2,7 @@ draw -
 
 event -
 
-input -
+input - вывести
 
 value -
 
@@ -10,9 +10,9 @@ share -
 
 folder -
 
-print -
+print - печатать/показать/вывести
 
-rsult -
+rsult - результат
 
 push -
 
@@ -34,7 +34,7 @@ text -
 
 int -
 
-turtle -
+turtle - черепаха
 
 shape -
 
@@ -206,6 +206,13 @@ get - получить что-то, откуда-(указать)
 row - ряд
 
 derictory - папка
+
+choose - выбрать
+
+organize - организовать
+
+
+
 
 
 
