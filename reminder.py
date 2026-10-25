@@ -1,4 +1,3 @@
-import datetime
 from tkinter import *
 from tkinter import messagebox as mb
 from tkinter import simpledialog as sd
@@ -8,6 +7,7 @@ import pygame
 
 
 t = 0
+music = False
 
 
 def set():
@@ -19,7 +19,7 @@ def set():
             minute = int(rem.split(":")[1])  #почему не 3?
             now = datetime.datetime.now()
             print(now)
-            dt = now.replace(hour=hour, minute=minute)
+            dt = now.replace(hour=hour, minute=minute, second=0, microsecond=0 )
             # print(dt)
             t = dt.timestamp()
             # print(t)
@@ -38,25 +38,38 @@ def check():
 
 
 def play_snd():
+    global music
+    music = True
     pygame.mixer.init()
     pygame.mixer.music.load("Sound_01036.mp3")
     pygame.mixer.music.play()
 
 
+def stop_snd():
+    global music
+    if music:
+        pygame.mixer.music.stop()
+        music = False
+    label.config(text="try again?")
+
+
+
 
 window = Tk()
-window.geometry("300x200")
+window.geometry("250x100")
 window.title("Simple Reminder")
 img = PhotoImage("hour.ico")
 window.iconbitmap(True, img)
-label = Label(window, text="Add a Reminder")
+label = Label(window, text="Add a Reminder", font=("Times New Roman", 14))
 label.pack(pady=10)
 
 
 set_button = Button(text="Set a Reminder", command=set)
 set_button.pack(pady=10)
+stop_button = Button(text="Stop a Reminder", command=stop_snd)
+stop_button.pack(pady=10)
 
-
+check()
 
 
 window.mainloop()
