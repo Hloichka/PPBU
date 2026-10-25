@@ -37,6 +37,10 @@ def check():
     window.after(10000, check) # -> check здесь включает рекурсию (повторение, каждые 10000 (мл. сек) = 10 секунд)
 
 
+def play_snd():
+    pygame.mixer.init()
+    pygame.mixer.music.load("Sound_01036.mp3")
+    pygame.mixer.music.play()
 
 
 
