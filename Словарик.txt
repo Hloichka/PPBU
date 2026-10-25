@@ -211,6 +211,12 @@ choose - выбрать
 
 organize - организовать
 
+ball -
+
+collision -
+
+move - двигаться
+
 
 
 
