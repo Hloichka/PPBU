@@ -7,7 +7,11 @@ import time
 import pygame
 
 
+t = 0
+
+
 def set():
+    global t
     rem = sd.askstring("Time Reminder", "Enter a Reminder HH:MM")
     if rem:
         try:
@@ -16,11 +20,22 @@ def set():
             now = datetime.datetime.now()
             print(now)
             dt = now.replace(hour=hour, minute=minute)
-            print(dt)
+            # print(dt)
             t = dt.timestamp()
-            print(t)
+            # print(t)
         except Exception as e:
             mb.showerror("Error!", f"Error: {e}")
+
+
+def check():
+    global t
+    if t:
+        now = time.time()
+        if now >= t:
+            play_snd()
+            t = 0
+    window.after(10000, check) # -> check здесь включает рекурсию (повторение, каждые 10000 (мл. сек) = 10 секунд)
+
 
 
 
