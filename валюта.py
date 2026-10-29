@@ -41,7 +41,7 @@ def exchange():
                             f'Курс: {exchange_rate:.1f} {target} за 1 {base}')
             else:
                 mb.showerror('Ошибка',
-                             f'Валюта {target_code} не найдена')
+                            f'Валюта {target_code} не найдена')
         except Exception as er:
             mb.showerror('Ошибка', er)
 
@@ -75,7 +75,7 @@ base_combobox.bind('<<ComboboxSelected>>', update_base_label)
 base_label = ttk.Label()
 base_label.pack()
 
-Label(root, text='Целевая валюта').pack(padx=10)
+Label(root, text='Целевая валюта' ).pack(padx=10)
 # popular_currencies = ['EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF',
 #                       'CNY', 'RUB', 'KZT', 'UZS']
 target_combobox = ttk.Combobox(root, values=list(currencies.keys()))
@@ -89,6 +89,7 @@ target_label.pack()
 
 Button(text='Получить курс обмена к доллару',
        command=exchange).pack(pady=10, padx=10)
+
 
 root.mainloop()
 # p = pprint.PrettyPrinter(indent=4)
